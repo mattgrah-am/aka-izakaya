@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/mattgrah-am/aka-izakaya#readme",
   "dependencies": {
+    "all": "^0.0.0",
     "express": "^4.17.3",
     "pg": "^8.7.3"
   },
