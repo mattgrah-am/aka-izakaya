@@ -24,3 +24,17 @@ sei-anz-seifxr06 - Project 3 - [Live Version](https://aka-izakaya.herokuapp.com/
 [Food Menu](./client/assets/readme/food-menu.webp)
 [Contact Page](./client/assets/readme/contact.webp)
 [Admin Page](./client/assets/readme/admin.webp)
+
+## Stle Guide
+
+### Font
+
+TBA
+
+### Colours
+
+TBA
+
+### CSS Framework
+
+[Bootstrap](https://getbootstrap.com/)
