@@ -3,7 +3,9 @@ const pg = require('pg');
 
 const PORT = process.env.PORT || 3333;
 const app = express();
-const db = require('./database/db');
+
+const db = require("./database/db");
+
 
 // Controller imports
 const menuController = require('./controllers/menu/index');
