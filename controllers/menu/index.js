@@ -21,4 +21,25 @@ router.get('/:type', (req, res) => {
     });
 });
 
+router.post('/', (req, res) => {
+    Menu.create(req.body).then((response) => {
+        res.status(201).json(response);
+    });
+});
+
+router.put('/:id', (req, res) => {
+    const { id, name, price, type, category } = req.body;
+    Menu.update(id, name, price, type, category).then(() => {
+        res.json({ message: 'Item updated' });
+    });
+});
+
+router.delete('/:id', (req, res) => {
+    Menu.delete(req.params.id).then((response) => {
+        if (response) {
+            res.json({ status: true, message: 'Item deleted' });
+        }
+    });
+});
+
 module.exports = router;
