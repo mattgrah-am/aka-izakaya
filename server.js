@@ -6,14 +6,6 @@ const app = express();
 const db = require("./database/db");
 
 // Controller imports
-const menuController = require("./controllers/menu/index");
-
-// Other pre-request middleware
-app.use(express.json());
-app.use(express.static("client"));
-
-
-// Controller imports
 const menuController = require('./controllers/menu/index');
 
 // Other pre-request middleware
