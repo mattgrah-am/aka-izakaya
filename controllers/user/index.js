@@ -18,7 +18,7 @@ router.post('/', (req, res, next) => {
                 });
             }
             req.session.userId = user.id;
-            req.session.username = user.username;
+            req.session.email = user.email;
             return res.json(user);
         })
         .catch((error) => {
