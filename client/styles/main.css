@@ -1,7 +1,18 @@
-.bg-img{
-    background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/img/main-bg.jpg);
-    background-size: auto;
-    background-attachment: fixed;
-    background-position: center;
-    
+@import url("https://fonts.googleapis.com/css2?family=Long+Cang&display=swap");
+
+.logo-font {
+  font-family: "Long Cang", cursive;
+  font-size: 4rem;
+}
+
+.bg-img {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../assets/img/main-bg.jpg);
+  background-size: auto;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.pointer {
+  cursor: pointer;
 }
