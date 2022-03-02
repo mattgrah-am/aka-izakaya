@@ -44,7 +44,5 @@ app.use('/api/session', sessionsController);
 app.use('/api/user', usersController);
 
 app.listen(PORT, () => {
-    console.log(
-        `Access app via http://localhost:${PORT}/ - Server listening on port: ${PORT}`
-    );
+    console.log(`Access app via http://localhost:${PORT}/ - Server listening on port: ${PORT}`);
 });
