@@ -28,8 +28,8 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    const { id, name, price, type, category } = req.body;
-    Menu.update(id, name, price, type, category).then(() => {
+    const { id, name, price, type, description, category } = req.body;
+    Menu.update(id, name, price, type, description, category).then(() => {
         res.json({ message: 'Item updated' });
     });
 });
