@@ -9,18 +9,17 @@ const Users = {
                 : null;
         });
     },
-    getByUsername: (username) => {
-        const query = 'SELECT * FROM users WHERE username = $1';
-        return db.query(query, [username]).then((response) => {
-            return response.rows && response.rows.length > 0
-                ? response.rows[0]
-                : null;
+    getByEmail: (email) => {
+        const query = 'SELECT * FROM users WHERE email = $1';
+        return db.query(query, [email]).then((response) => {
+            return response.rows[0];
+                
         });
     },
-    create: ({ username, password, admin = false }) => {
+    create: ({ email, password, admin = false }) => {
         const query =
-            'INSERT INTO users (username, password, admin) VALUES($1, $2, $3) RETURNING *';
-        return db.query(query, [username, password, admin]).then((response) => {
+            'INSERT INTO users (email, password, admin) VALUES($1, $2, $3) RETURNING *';
+        return db.query(query, [email, password, admin]).then((response) => {
             return response.rows && response.rows.length > 0
                 ? response.rows[0]
                 : null;

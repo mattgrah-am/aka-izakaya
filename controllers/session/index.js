@@ -5,56 +5,53 @@ const bcrypt = require('bcrypt');
 const router = express.Router();
 
 // Routes
-// 1. Create session (login)
-router.post('/create', (req, res) => {
-    //     const username = req.body.username;
-    //     const password = req.body.password;
-    //     function incorrectResponse(res) {
-    //         res.status(400).json({
-    //             message: 'Incorrect username or password',
-    //         });
-    //     }
-    //     Users.getByUsername(username)
-    //         .then((user) => {
-    //             // Note that the asynchronous method is preferred but we use Sync here for simplicity
-    //             const valid = user && bcrypt.compareSync(password, user.password);
-    //             if (valid) {
-    req.session.userId = 'Stephan';
-    req.session.username = 'Stephan';
-    res.json({
-        message: 'The session worked',
-        userId: req.session.userId,
-        username: req.session.username,
-    }); // send the session info (but only as much as is relevant/necessary);
-    res.redirect('/');
-});
-//             } else {
-//                 incorrectResponse(res);
-//             }
-//         })
-//         .catch((error) => {
-//             incorrectResponse(res);
-//         });
-// });
+// 1. Create Session (login)
+router.post("/", (req, res) => {
+
+    const email = req.body.email;
+    const password = req.body.password;
+    Users.getByEmail(email).then((emailResponse) => {
+      res.json({
+        User: emailResponse,
+        email: email,
+        Password: password,
+      })
+    })
+  
+    // Check the password (and/or email)
+    // if it is correct
+    
+    // if (email === userData.email && password === userData.password) {
+    //   req.session.email = email;
+    //   res.status(200).json({ email: email });
+    // } else {
+    //   res.status(400).json({
+    //     message: "Incorrect email or password",
+    //   });
+    // }
+  });
+
 // 2. Get Session
-router.get('/', (req, res) => {
-    // If Logged in Check
-    if (req.session.username) {
-        res.json({
-            userId: req.session.userId,
-            username: req.session.username,
-        });
-    } else {
-        // 401 - Unauthorized
-        res.status(401).json({
-            message: 'Not logged in',
-        });
-    }
+router.get("/", (req, res) => {
+  // If Logged in Check
+  if (req.session.email) {
+    res.json({
+      email: req.session.email,
+    });
+  } else {
+    // 401 - Unauthorised
+    res.status(401).json({
+      message: "Not logged in.",
+    });
+  }
 });
-// 3. Delete session (logout)
-router.delete('/', (req, res) => {
-    req.session.destroy();
-    res.json({ message: 'Logged out' });
+
+// 3. Delete Sessions (logout)
+router.delete("/", (req, res) => {
+  req.session.destroy();
+  res.json({
+    message: "Logged out.",
+  });
 });
 
 module.exports = router;
