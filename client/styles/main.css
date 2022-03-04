@@ -5,6 +5,13 @@
   font-size: 4rem;
 }
 
+.logo-font-lg {
+  font-family: "Long Cang", cursive;
+  font-size: 8rem;
+  line-height: 0.6;
+  text-align: right;
+}
+
 .bg-img {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../assets/img/main-bg.jpg);

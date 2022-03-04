@@ -8,7 +8,7 @@ function renderHeader() {
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav mb-2 mb-lg-0">
+      <ul class="navbar-nav mb-2 mb-lg-0 text-uppercase fs-6 fw-bold">
         <li onClick="renderAbout()" class="nav-item nav-link pointer">About</li>
         <li onClick="renderFood()" class="nav-item nav-link pointer">Food</li>
         <li onClick="renderDrinks()" class="nav-item nav-link pointer">Drink</li>
