@@ -3,6 +3,7 @@ function renderAdminWine() {
   const section = document.createElement("section");
   section.classList.add("container");
   page.replaceChildren(section);
+
   section.innerHTML = `      
   <div class="w-75 m-auto">
       <div class="title_header pt-5 pb-2">
@@ -18,66 +19,36 @@ function renderAdminWine() {
             <th style="width: 12rem" scope="col">Actions</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Drink name</th>
-            <td>Drink desc blah blah blah</td>
-            <td>19</td>
-            <td>
-              <button class="btn btn-secondary">Update</button>
-              <button class="btn btn-danger">Delete</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Drink name</th>
-            <td>Drink desc blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-            </td>
-            <td>19</td>
-            <td>
-              <button class="btn btn-secondary">Update</button>
-              <button class="btn btn-danger">Delete</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Drink name</th>
-            <td>Drink desc blah blah blah</td>
-            <td>19</td>
-            <td>
-              <button class="btn btn-secondary">Update</button>
-              <button class="btn btn-danger">Delete</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Drink name</th>
-            <td>Drink desc blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-            </td>
-            <td>19</td>
-            <td>
-              <button class="btn btn-secondary">Update</button>
-              <button class="btn btn-danger">Delete</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Drink name</th>
-            <td>Drink desc blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-            </td>
-            <td>19</td>
-            <td>
-              <button class="btn btn-secondary">Update</button>
-              <button class="btn btn-danger">Delete</button>
-            </td>
-          </tr>
+        <tbody id="wineTable">
+
         </tbody>
       </table>
     </div>`;
-}
 
-function renderAdminBeer() {
-  const page = document.querySelector("#page");
-  const section = document.createElement("section");
-  section.classList.add("container");
-  page.replaceChildren(section);
-  section.innerHTML = `      
+  axios.get("../api/menu/wine").then((response) => {
+    const menuData = response.data;
+    console.log(menuData);
+    const wineTable = document.querySelector("#wineTable");
+    menuData.forEach((menuData) => {
+      const tr = document.createElement("tr");
+      wineTable.appendChild(tr).innerHTML = `
+            <th scope="row">${menuData.name}</th>
+            <td>${menuData.description}</td>
+            <td>${menuData.price}</td>
+            <td>
+              <button class="btn btn-secondary" onClick="updateBlah(${menuData.id})">Update</button>
+              <button class="btn btn-danger" onClick="deleteBlah(${menuData.id})">Delete</button>
+            </td>
+          `;
+    });
+  });
+
+  function renderAdminBeer() {
+    const page = document.querySelector("#page");
+    const section = document.createElement("section");
+    section.classList.add("container");
+    page.replaceChildren(section);
+    section.innerHTML = `      
   <div class="w-75 m-auto">
       <div class="title_header pt-5 pb-2">
         <h3 class="catagory">Beer</h3>
@@ -144,14 +115,14 @@ function renderAdminBeer() {
         </tbody>
       </table>
     </div>`;
-}
+  }
 
-function renderAdminSake() {
-  const page = document.querySelector("#page");
-  const section = document.createElement("section");
-  section.classList.add("container");
-  page.replaceChildren(section);
-  section.innerHTML = `      
+  function renderAdminSake() {
+    const page = document.querySelector("#page");
+    const section = document.createElement("section");
+    section.classList.add("container");
+    page.replaceChildren(section);
+    section.innerHTML = `      
   <div class="w-75 m-auto">
       <div class="title_header pt-5 pb-2">
         <h3 class="catagory">Sake</h3>
@@ -218,14 +189,14 @@ function renderAdminSake() {
         </tbody>
       </table>
     </div>`;
-}
+  }
 
-function renderAdminWhiskey() {
-  const page = document.querySelector("#page");
-  const section = document.createElement("section");
-  section.classList.add("container");
-  page.replaceChildren(section);
-  section.innerHTML = `      
+  function renderAdminWhiskey() {
+    const page = document.querySelector("#page");
+    const section = document.createElement("section");
+    section.classList.add("container");
+    page.replaceChildren(section);
+    section.innerHTML = `      
   <div class="w-75 m-auto">
       <div class="title_header pt-5 pb-2">
         <h3 class="catagory">Whiskey</h3>
@@ -292,4 +263,5 @@ function renderAdminWhiskey() {
         </tbody>
       </table>
     </div>`;
+  }
 }
