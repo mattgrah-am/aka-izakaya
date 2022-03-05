@@ -27,8 +27,8 @@ const Menu = {
         return response.rows ? response.rows[0] : {};
       });
   },
-  update: (id, name, price, type, category) => {
-    const query = `UPDATE menu SET name = $1, price = $2, type = $3, description = $4, category = $5 WHERE id = $5 RETURNING *`;
+  update: (id, name, price, type, description, category) => {
+    const query = `UPDATE menu SET name = $1, price = $2, type = $3, description = $4, category = $5 WHERE id = $6 RETURNING *`;
     return db
       .query(query, [name, price, type, description, category, id])
       .then((response) => {
