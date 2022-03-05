@@ -1,5 +1,4 @@
 const express = require('express');
-const req = require('express/lib/request');
 const Menu = require('../../models/menu');
 const isLoggedIn = require('../../middleware/is_logged_in');
 
