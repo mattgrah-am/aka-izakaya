@@ -16,6 +16,7 @@ const pgSession = require('connect-pg-simple')(expressSession);
 const menuController = require('./controllers/menu/index');
 const sessionsController = require('./controllers/session/index');
 const usersController = require('./controllers/user/index');
+const logger = require('./middleware/logger');
 
 // handlers
 app.use(
@@ -31,6 +32,7 @@ app.use(
 );
 
 // Other pre-request middleware
+app.use(logger);
 app.use(express.json());
 app.use(express.static('client'));
 
@@ -43,7 +45,8 @@ app.use('/api/menu', menuController);
 app.use('/api/session', sessionsController);
 app.use('/api/user', usersController);
 
-
 app.listen(PORT, () => {
-    console.log(`Access app via http://localhost:${PORT}/ - Server listening on port: ${PORT}`);
+    console.log(
+        `Access app via http://localhost:${PORT}/ - Server listening on port: ${PORT}`
+    );
 });

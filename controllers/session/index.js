@@ -12,11 +12,10 @@ router.post('/', (req, res) => {
     Users.getByEmail(email).then((emailResponse) => {
         // Check the password (and/or email)
         // if it is correct
-
-        if (
-            email === emailResponse.email &&
-            password === emailResponse.password
-        ) {
+        const valid =
+            emailResponse &&
+            bcrypt.compareSync(password, emailResponse.password);
+        if (email === emailResponse.email && valid === true) {
             req.session.email = email;
             res.status(200).json({ email: email });
         } else {
