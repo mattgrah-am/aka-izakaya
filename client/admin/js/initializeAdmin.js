@@ -3,8 +3,13 @@ function loginCheck() {
         .get('/api/session/')
         .then((response) => {
             const user = response.data.email;
-
             renderAdminHeader(user);
+            if (!user) {
+                renderLogin();
+            } else {
+                renderAdminAbout();
+                renderAdminHeader(user);
+            }
         })
         .catch((error) => {
             renderLogin();
@@ -13,11 +18,3 @@ function loginCheck() {
 
 // Check if there is already a user logged in.
 loginCheck();
-
-// If not, send to login page. If they are, render the admin page
-if (!user) {
-    renderLogin();
-} else {
-    renderAdminHeader();
-    renderAdminAbout();
-}
