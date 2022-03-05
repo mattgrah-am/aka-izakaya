@@ -78,7 +78,7 @@ function renderModItem(
   });
 }
 
-function renderDelItem(id) {
+function renderDelItem(type, category, id) {
   const createModal = document.querySelector("#formModal");
   const div = document.createElement("div");
   createModal.replaceChildren(div);
@@ -86,14 +86,14 @@ function renderDelItem(id) {
     <p>Are you sure you want to delete this item?</p>
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-      <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="renderDel(${id})">Delete</button>
+      <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="renderDel('${type}', '${category}', ${id})">Delete</button>
     </div>
   `;
 }
 
-function renderDel(id) {
+function renderDel(type, category, id) {
   axios
-    .delete(`/api/menu/${id}`, body)
+    .delete(`/api/menu/${id}`)
     .then((response) => {
       renderCategory(type, category);
       console.log(response);
