@@ -17,9 +17,21 @@
     url(../assets/img/main-bg.jpg);
   background-size: auto;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
 .pointer {
   cursor: pointer;
+}
+
+.menu-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.grid-span-2 {
+  grid-column: 1 / span 2;
+  margin-top: 2rem;
 }
