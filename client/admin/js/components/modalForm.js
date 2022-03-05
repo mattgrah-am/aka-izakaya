@@ -77,3 +77,28 @@ function renderModItem(
     }
   });
 }
+
+function renderDelItem(type, category, id) {
+  const createModal = document.querySelector("#formModal");
+  const div = document.createElement("div");
+  createModal.replaceChildren(div);
+  div.innerHTML = `
+    <p>Are you sure you want to delete this item?</p>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+      <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="renderDel('${type}', '${category}', ${id})">Delete</button>
+    </div>
+  `;
+}
+
+function renderDel(type, category, id) {
+  axios
+    .delete(`/api/menu/${id}`)
+    .then((response) => {
+      renderCategory(type, category);
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
