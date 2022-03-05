@@ -72,8 +72,8 @@ INSERT INTO menu (name, price, type, description, category) VALUES
 ('Fukuju Mikagego', 11, 'drink', 'flavors of citrus, peach and steamed rice', 'sake'),
 ('Kenbishi Kuromatsu', 10, 'drink', 'cocoa, caramel, sour rice and almond flavor', 'sake'),
 -- Whiskey
-('Yamazaki', 17, 'drink', 'fruity single malt', 'Whisky'),
-('Nikka', 19, 'drink', 'delicious whisky a creamy texture and sweetness', 'Whisky'),
-('Toki', 18, 'drink', 'notes of pink grapefruit, almonds and vanilla', 'Whisky'),
-('Hakushu', 19, 'drink', 'delightful fruity flavour with a light peat quality', 'Whisky'),
-('Akashi', 16, 'drink', 'smooth mouthfeel and buttery', 'Whisky');
+('Yamazaki', 17, 'drink', 'fruity single malt', 'whiskey'),
+('Nikka', 19, 'drink', 'delicious whisky a creamy texture and sweetness', 'whiskey'),
+('Toki', 18, 'drink', 'notes of pink grapefruit, almonds and vanilla', 'whiskey'),
+('Hakushu', 19, 'drink', 'delightful fruity flavour with a light peat quality', 'whiskey'),
+('Akashi', 16, 'drink', 'smooth mouthfeel and buttery', 'whiskey');

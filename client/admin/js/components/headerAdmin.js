@@ -14,10 +14,10 @@ function renderAdminHeader() {
             Food Menu
           </button>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownMenuButton1">
-            <li onClick="renderAdminSnacks()" class="dropdown-item pointer">Snacks</li>
-            <li onClick="renderAdminYakitori()" class="dropdown-item pointer">Yakitori</li>
-            <li onClick="renderAdminSashimi()" class="dropdown-item pointer">Sashimi</li>
-            <li onClick="renderAdminDesserts()" class="dropdown-item pointer">Desserts</li>
+            <li onClick="renderCategory('food', 'snack')" class="dropdown-item pointer">Snacks</li>
+            <li onClick="renderCategory('food', 'yakitori')" class="dropdown-item pointer">Yakitori</li>
+            <li onClick="renderCategory('food', 'sashimi')" class="dropdown-item pointer">Sashimi</li>
+            <li onClick="renderCategory('food', 'dessert')" class="dropdown-item pointer">Desserts</li>
           </ul>
         </div>
         <div class="dropdown">
@@ -26,10 +26,10 @@ function renderAdminHeader() {
             Drinks Menu
           </button>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownMenuButton2">
-            <li onClick="renderAdminWine()" class="dropdown-item pointer">Wine</li>
-            <li onClick="renderAdminBeer()" class="dropdown-item pointer">Beer</li>
-            <li onClick="renderAdminSake()" class="dropdown-item pointer">Sake</li>
-            <li onClick="renderAdminWhiskey()" class="dropdown-item pointer">Whiskey</li>
+            <li onClick="renderCategory('drink', 'wine')" class="dropdown-item pointer">Wine</li>
+            <li onClick="renderCategory('drink', 'beer')" class="dropdown-item pointer">Beer</li>
+            <li onClick="renderCategory('drink', 'sake')" class="dropdown-item pointer">Sake</li>
+            <li onClick="renderCategory('drink', 'whiskey')" class="dropdown-item pointer">Whiskey</li>
           </ul>
         </div>
         <li class="nav-item nav-link link-light pointer">Messages</li>
