@@ -321,7 +321,7 @@ VALUES
         17,
         'drink',
         'fruity single malt',
-        'Whisky'
+        'whisky'
     ),
     (
         'Nikka',
@@ -335,19 +335,19 @@ VALUES
         18,
         'drink',
         'notes of pink grapefruit, almonds and vanilla',
-        'Whisky'
+        'whisky'
     ),
     (
         'Hakushu',
         19,
         'drink',
         'delightful fruity flavour with a light peat quality',
-        'Whisky'
+        'whisky'
     ),
     (
         'Akashi',
         16,
         'drink',
         'smooth mouthfeel and buttery',
-        'Whisky'
+        'whisky'
     );

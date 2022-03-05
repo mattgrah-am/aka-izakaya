@@ -57,7 +57,7 @@ function renderCategory(type, category) {
       }','${menuData.description}',${
         menuData.price
       })" data-bs-toggle="modal" data-bs-target="#create">Update</button>
-              <button class="btn btn-danger" onClick="deleteBlah(${
+              <button class="btn btn-danger" onClick="renderDelItem(${
                 menuData.id
               })">Delete</button>
             </td>
