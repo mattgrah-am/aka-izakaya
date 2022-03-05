@@ -76,4 +76,4 @@ INSERT INTO menu (name, price, type, description, category) VALUES
 ('Nikka', 19, 'drink', 'delicious whisky a creamy texture and sweetness', 'Whisky'),
 ('Toki', 18, 'drink', 'notes of pink grapefruit, almonds and vanilla', 'Whisky'),
 ('Hakushu', 19, 'drink', 'delightful fruity flavour with a light peat quality', 'Whisky'),
-('Akashi', 16, 'drink', 'smooth mouthfeel and buttery', 'Whisky')
+('Akashi', 16, 'drink', 'smooth mouthfeel and buttery', 'Whisky');

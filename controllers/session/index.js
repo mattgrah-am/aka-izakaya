@@ -1,35 +1,28 @@
-const express = require('express');
-const Users = require('../../models/user');
-const bcrypt = require('bcrypt');
+const express = require("express");
+const Users = require("../../models/user");
+const bcrypt = require("bcrypt");
 
 const router = express.Router();
 
 // Routes
 // 1. Create Session (login)
 router.post("/", (req, res) => {
-
-    const email = req.body.email;
-    const password = req.body.password;
-    Users.getByEmail(email).then((emailResponse) => {
-      res.json({
-        User: emailResponse,
-        email: email,
-        Password: password,
-      })
-    })
-  
+  const email = req.body.email;
+  const password = req.body.password;
+  Users.getByEmail(email).then((emailResponse) => {
     // Check the password (and/or email)
     // if it is correct
-    
-    // if (email === userData.email && password === userData.password) {
-    //   req.session.email = email;
-    //   res.status(200).json({ email: email });
-    // } else {
-    //   res.status(400).json({
-    //     message: "Incorrect email or password",
-    //   });
-    // }
+
+    if (email === emailResponse.email && password === emailResponse.password) {
+      req.session.email = email;
+      res.status(200).json({ email: email });
+    } else {
+      res.status(400).json({
+        message: "Incorrect email or password",
+      });
+    }
   });
+});
 
 // 2. Get Session
 router.get("/", (req, res) => {
