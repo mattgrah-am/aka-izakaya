@@ -66,7 +66,7 @@ function renderModItem(
         category,
       };
       axios
-        .put(`/api/menu/${id}`, body)
+        .put(`/api/menu/`, body)
         .then((response) => {
           renderCategory(type, category);
           console.log(response);

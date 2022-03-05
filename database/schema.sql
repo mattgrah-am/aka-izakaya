@@ -229,35 +229,35 @@ VALUES
     (
         'Château Mars',
         14,
-        'drink',
+        'drinks',
         'fruity, citrusy expression',
         'wine'
     ),
     (
         'Suntory Tomi No Oka',
         11,
-        'drink',
+        'drinks',
         'a red wine from Yamanashi-ken',
         'wine'
     ),
     (
         'Otaru Bijin Plum',
         12,
-        'drink',
+        'drinks',
         'perfect combination of sweet and sour',
         'wine'
     ),
     (
         'Histoire Red',
         12,
-        'drink',
+        'drinks',
         'well-balanced wine with moderate tannins and acidity',
         'wine'
     ),
     (
         'Koshu Sur Lie',
         15,
-        'drink',
+        'drinks',
         'fruity, dry, balanced wine',
         'wine'
     ),
@@ -265,35 +265,35 @@ VALUES
     (
         'Asahi Super Dry',
         10,
-        'drink',
+        'drinks',
         'light, crisp, bitter, and extremely sharp',
         'beer'
     ),
     (
         'Kirin Lager',
         9,
-        'drink',
+        'drinks',
         'pale lager has a nice grain aroma and crisp taste',
         'beer'
     ),
     (
         'Kirin Ichiban Shibori',
         11,
-        'drink',
+        'drinks',
         'mild, pure and smooth-tasting',
         'beer'
     ),
     (
         'Sapporo Nama',
         13,
-        'drink',
-        'easy to drink, distinctive, mature taste',
+        'drinks',
+        'easy to drinks, distinctive, mature taste',
         'beer'
     ),
     (
         'Sapporo Yebisu',
         11,
-        'drink',
+        'drinks',
         'deep and rich intensity, with a clean finish',
         'beer'
     ),
@@ -301,35 +301,35 @@ VALUES
     (
         'Hakkaisan Tokubetsu',
         11,
-        'drink',
+        'drinks',
         'great summer sake served chilled',
         'sake'
     ),
     (
         'Kikusui Perfect Snow',
         13,
-        'drink',
+        'drinks',
         'reminiscent of pure snow, with a crisp flavor',
         'sake'
     ),
     (
         'Honjozo',
         8,
-        'drink',
+        'drinks',
         'savory, earthy, grainy, nutty flavor',
         'sake'
     ),
     (
         'Fukuju Mikagego',
         11,
-        'drink',
+        'drinks',
         'flavors of citrus, peach and steamed rice',
         'sake'
     ),
     (
         'Kenbishi Kuromatsu',
         10,
-        'drink',
+        'drinks',
         'cocoa, caramel, sour rice and almond flavor',
         'sake'
     ),
@@ -337,36 +337,35 @@ VALUES
     (
         'Yamazaki',
         17,
-        'drink',
+        'drinks',
         'fruity single malt',
         'whiskey'
     ),
     (
         'Nikka',
         19,
-        'drink',
+        'drinks',
         'delicious whisky a creamy texture and sweetness',
         'whiskey'
     ),
     (
         'Toki',
         18,
-        'drink',
+        'drinks',
         'notes of pink grapefruit, almonds and vanilla',
         'whiskey'
     ),
     (
         'Hakushu',
         19,
-        'drink',
+        'drinks',
         'delightful fruity flavour with a light peat quality',
         'whiskey'
     ),
     (
         'Akashi',
         16,
-        'drink',
+        'drinks',
         'smooth mouthfeel and buttery',
         'whiskey'
     );
-
