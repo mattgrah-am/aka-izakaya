@@ -1,6 +1,6 @@
 function renderAdminHeader() {
-  const header = document.querySelector("#header-nav");
-  header.innerHTML = `
+    const header = document.querySelector('#header-nav');
+    header.innerHTML = `
   <nav class="d-flex flex-column p-4 text-white bg-dark" style="width: 18rem;">
       <div class="d-flex align-items-center text-decoration-none text-white bg-dark fs-4 ps-2">Admin
         Portal
