@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 3333;
 const menuController = require('./controllers/menu/index');
 const sessionsController = require('./controllers/session/index');
 const usersController = require('./controllers/user/index');
+const contactController = require('./controllers/contact');
 const logger = require('./middleware/logger');
 
 // Handlers
@@ -42,6 +43,7 @@ app.get('/', (req, res) => {
 app.use('/api/menu', menuController);
 app.use('/api/session', sessionsController);
 app.use('/api/user', usersController);
+app.use('/api/contact', contactController);
 
 app.listen(PORT, () => {
     console.log(`Access app via http://localhost:${PORT}/ - Server listening on port: ${PORT}`);
