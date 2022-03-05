@@ -7,9 +7,9 @@ const Menu = {
             return response.rows;
         });
     },
-    getByType: (type) => {
-        const query = `SELECT * FROM menu WHERE type = $1`;
-        return db.query(query, [type]).then((response) => {
+    getByCategory: (category) => {
+        const query = `SELECT * FROM menu WHERE category = $1`;
+        return db.query(query, [category]).then((response) => {
             return response.rows;
         });
     },

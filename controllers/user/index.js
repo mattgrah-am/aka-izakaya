@@ -1,6 +1,5 @@
 const express = require('express');
 const Users = require('../../models/user');
-// const userCreateValidator = require('./create_user_validator');
 const bcrypt = require('bcrypt');
 
 const router = express.Router();
@@ -13,8 +12,7 @@ router.post('/', (req, res, next) => {
         .then((user) => {
             if (!user) {
                 return res.status(500).json({
-                    message:
-                        'Something went wrong creating the user. Please try again.',
+                    message: 'Something went wrong creating the user. Please try again.',
                 });
             }
             req.session.userId = user.id;

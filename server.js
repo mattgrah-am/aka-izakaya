@@ -2,23 +2,21 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
 
+// App requirements
 const express = require('express');
-const pg = require('pg');
-
-const PORT = process.env.PORT || 3333;
 const app = express();
-
 const db = require('./database/db');
-
 const expressSession = require('express-session');
 const pgSession = require('connect-pg-simple')(expressSession);
+const PORT = process.env.PORT || 3333;
+
 // Controller imports
 const menuController = require('./controllers/menu/index');
 const sessionsController = require('./controllers/session/index');
 const usersController = require('./controllers/user/index');
 const logger = require('./middleware/logger');
 
-// handlers
+// Handlers
 app.use(
     expressSession({
         store: new pgSession({
@@ -46,7 +44,5 @@ app.use('/api/session', sessionsController);
 app.use('/api/user', usersController);
 
 app.listen(PORT, () => {
-    console.log(
-        `Access app via http://localhost:${PORT}/ - Server listening on port: ${PORT}`
-    );
+    console.log(`Access app via http://localhost:${PORT}/ - Server listening on port: ${PORT}`);
 });
