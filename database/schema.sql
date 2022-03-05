@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS menu;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS contact;
 
 CREATE TABLE users(
     id SERIAL PRIMARY KEY NOT NULL,
@@ -16,6 +17,16 @@ VALUES
         '$2b$10$S42U8YMPm8MlfzjNGh5Op.TVOaWDL2uJHku29oZNhsnVih9yPz2QO',
         true
     );
+
+CREATE TABLE contact (
+    id SERIAL PRIMARY KEY NOT NULL,
+    name VARCHAR (128),
+    email VARCHAR (120),
+    enquiry TEXT
+);
+
+INSERT INTO contact (name, email, enquiry) VALUES ('Stefan Fenech', 'stefan@gmail.com', 'Hi, your food was sick. Love it.');
+
 
 CREATE TABLE menu(
     id SERIAL PRIMARY KEY NOT NULL,
