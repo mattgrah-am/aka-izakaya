@@ -1,5 +1,4 @@
 DROP TABLE IF EXISTS menu;
-
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users(
