@@ -10,19 +10,19 @@ function renderAdminWine() {
         <h3 class="catagory">Wine</h3>
         <p class="desc">Short desc on how to update / delete items</p>
       </div>
-      <table class="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th style="width: 8rem" scope="col">Name</th>
-            <th scope="col">Description</th>
-            <th style="width: 4rem" scope="col">Price</th>
-            <th style="width: 12rem" scope="col">Actions</th>
-          </tr>
-        </thead>
-        <tbody id="wineTable">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th style="width: 8rem" scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th style="width: 4rem" scope="col">Price</th>
+              <th style="width: 12rem" scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="wineTable">
 
-        </tbody>
-      </table>
+          </tbody>
+        </table>
     </div>`;
 
   axios.get("../api/menu/wine").then((response) => {

@@ -23,3 +23,14 @@
 .pointer {
   cursor: pointer;
 }
+
+#adminHeader{
+  width: 32rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+h1{
+  color: black;
+  margin: 3rem 0 0 4rem;
+}

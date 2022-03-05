@@ -15,15 +15,25 @@ function renderLogin() {
     const div = document.createElement('div');
     page.replaceChildren(div);
     div.innerHTML = `
-      <form id="login-form" action="/api/session" method="POST">
-        <p id="error-msg" class="error hidden"></p>
-        <label for="email">email: </label>
-        <input type="email" name="email" id="email">
-        <label for="password">Password: </label>
-        <input type="password" name="password" id="password">
-        <button type="submit">Login</button>
-      </form>
+    <div id="adminHeader">
+        <h1 class="logo-font">Aka Izakaya</h1>
+    </div>
+    <div class="vh-100 vw-100 d-flex flex-column justify-content-center align-items-center">
+    <form id="login-form" action="/api/session" method="POST">
+    <div class="mb-3">
+      <label for="email" class="form-label" style="color: black">Email address</label>
+      <input type="email" class="form-control" name="email" id="email">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label" style="color: black">Password</label>
+      <input type="password" class="form-control" name="password" id="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+  </div>
   `;
+
+
 
     const loginForm = document.getElementById('login-form');
     loginForm.addEventListener('submit', (event) => {
@@ -39,6 +49,7 @@ function renderLogin() {
             .post('/api/session/', body)
             .then((response) => {
                 console.log(response);
+                renderAdminAbout()
                 renderAdminHeader();
             })
             .catch((error) => {
