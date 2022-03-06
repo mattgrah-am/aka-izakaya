@@ -11,7 +11,7 @@ function renderHeader() {
       <ul class="navbar-nav mb-2 mb-lg-0 text-uppercase fs-6 fw-bold">
         <li onClick="renderAbout()" class="nav-item nav-link pointer">About</li>
         <li onClick="renderMenu('food')" class="nav-item nav-link pointer">Food</li>
-        <li onClick="renderMenu('drink')" class="nav-item nav-link pointer">Drinks</li>
+        <li onClick="renderMenu('drinks')" class="nav-item nav-link pointer">Drinks</li>
         <li onClick="renderContact()" class="nav-item nav-link pointer">Contact</li>
       </ul>
     </div>

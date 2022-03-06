@@ -14,7 +14,7 @@ function renderHome() {
           <div class="d-flex justify-content-center text-uppercase fs-5 fw-bold mt-5">
             <p onClick="renderHeader(); renderAbout()" class="link-light pointer px-4">About</p>
             <p onClick="renderHeader(); renderMenu('food')" class="link-light pointer px-4">Food</p>
-            <p onClick="renderHeader(); renderMenu('drink')" class="link-light pointer px-4">Drinks</p>
+            <p onClick="renderHeader(); renderMenu('drinks')" class="link-light pointer px-4">Drinks</p>
             <p onClick="renderHeader(); renderContact()" class="link-light pointer px-4">Contact</p>
           </div>
         </div>
