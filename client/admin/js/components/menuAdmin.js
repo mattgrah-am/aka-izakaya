@@ -7,7 +7,7 @@ function renderCategory(type, category) {
   section.innerHTML = `      
   <div class="container">
       <div class="title_header pt-5 pb-2">
-        <h3 class="catagory">${category}</h3>
+        <h3 class="catagory text-uppercase">${category}</h3>
         <p class="desc">Short desc on how to update / delete items</p>
         <button onClick="renderModItem('${type}', '${category}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">Create New</button>
       </div>
