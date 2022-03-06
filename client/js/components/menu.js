@@ -1,5 +1,5 @@
 function renderMenu(type) {
-  document.body.style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../assets/img/${type}-bg.jpg") no-repeat fixed center`;
+  document.body.style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../assets/img/${type}-bg.webp") no-repeat fixed center`;
   const page = document.querySelector("#page");
   const section = document.createElement("section");
   section.classList.add("container");
