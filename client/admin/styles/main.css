@@ -1,29 +1,39 @@
-@import url("https://fonts.googleapis.com/css2?family=Long+Cang&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&display=swap');
 
 body {
-  min-height: 100vh;
+    min-height: 100vh;
 }
 
 header {
-  display: flex;
-  flex-wrap: nowrap;
-  height: 100vh;
-  max-height: 100vh;
-  overflow-x: auto;
-  overflow-y: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .pointer {
-  cursor: pointer;
+    cursor: pointer;
 }
 
-#adminHeader{
-  width: 32rem;
-  display: flex;
-  justify-content: flex-start;
+#adminHeader {
+    width: 32rem;
+    display: flex;
+    justify-content: flex-start;
 }
 
-h1{
-  color: black;
-  margin: 3rem 0 0 4rem;
+h1 {
+    color: black;
+    margin: 3rem 0 0 4rem;
+}
+
+#admin-link {
+    text-decoration: none;
+    color: white;
+}
+
+.about {
+    padding-left: 25px;
+    padding-top: 20px;
 }

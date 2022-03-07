@@ -1,13 +1,14 @@
 function renderAdminHeader() {
-  const header = document.querySelector("#header-nav");
-  header.innerHTML = `
+    axios.get('/api/session/').then((response) => {
+        const user = response.data.email;
+        const header = document.querySelector('#header-nav');
+        header.innerHTML = `
   <nav class="vh-100 d-flex flex-column p-4 text-white bg-dark" style="width: 18rem;">
-      <div class="d-flex align-items-center text-decoration-none text-white bg-dark fs-4 ps-2">Admin
-        Portal
+      <div class="d-flex align-items-center text-decoration-none text-white bg-dark fs-4 ps-2"> <a href="/admin" id="admin-link"> Admin
+        Portal</a>
       </div>
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
-        <li onClick="renderAdminAbout()" class="nav-item nav-link link-light pointer">About</li>
         <div class="dropdown">
           <button class="nav-item nav-link link-light dropdown-toggle" type="button" id="dropdownMenuButton1"
             data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,16 +40,13 @@ function renderAdminHeader() {
       <div class="dropdown">
         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
           data-bs-toggle="dropdown" aria-expanded="false">
-          <strong>user-name</strong>
+          <strong>${user}</strong>
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-          <li class="dropdown-item pointer">Profile</a></li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li class="dropdown-item pointer">Sign out</li>
+          <li class="dropdown-item pointer" onClick="logout()">Sign out</li>
         </ul>
       </div>
     </nav>
   `;
+    });
 }
