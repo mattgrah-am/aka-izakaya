@@ -29,7 +29,7 @@ function renderCategory(type, category) {
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="create">Add Item</h5>
+            <h5 class="modal-title" id="create">Add / Modify Item</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div id="formModal" class="modal-body">
@@ -49,8 +49,18 @@ function renderCategory(type, category) {
             <td>${menuData.description}</td>
             <td>${menuData.price}</td>
             <td>
-              <button class="btn btn-secondary" onClick="renderModItem('${menuData.type}','${menuData.category}',${(isCreate = false)},${menuData.id},'${menuData.name}','${menuData.description}',${menuData.price})" data-bs-toggle="modal" data-bs-target="#create">Update</button>
-              <button class="btn btn-danger" onClick="renderDelItem('${menuData.type}','${menuData.category}',${menuData.id})" data-bs-toggle="modal" data-bs-target="#create">Delete</button>
+              <button class="btn btn-secondary" onClick="renderModItem('${
+                  menuData.type
+              }','${menuData.category}',${(isCreate = false)},${menuData.id},'${
+                menuData.name
+            }','${menuData.description}',${
+                menuData.price
+            })" data-bs-toggle="modal" data-bs-target="#create">Update</button>
+              <button class="btn btn-danger" onClick="renderDelItem('${
+                  menuData.type
+              }','${menuData.category}',${
+                menuData.id
+            })" data-bs-toggle="modal" data-bs-target="#create">Delete</button>
             </td>
           `;
         });
