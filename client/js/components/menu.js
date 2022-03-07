@@ -4,16 +4,30 @@ function renderMenu(type) {
   const section = document.createElement("section");
   section.classList.add("container");
   page.replaceChildren(section);
+  console.log(type);
 
-  section.innerHTML = `
-  <div class="container w-75">
-    <div class="title_header pt-5 pb-4">
-      <h3 class="catagory text-uppercase">${type} Menu</h3>
-      <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ad aliquam dolorum.
-        Deleniti placeat nulla quas doloribus, perferendis ab error atque quisquam. Excepturi, consequuntur. Ex
-        officia illum iste exercitationem quasi.</p>
-    </div>
-  <div id="foodMenu" class="menu-container mb-5"></div>`;
+  if (type === "food"){
+    section.innerHTML = `
+    <div class="container w-75">
+      <div class="title_header pt-5 pb-4">
+        <h3 class="catagory text-uppercase">${type} Menu</h3>
+        <p class="desc">The connection with nature is one of the defining hallmarks of Japanese food. Where food is eaten in as natural a state as possible, as fresh as possible, as this is considered the ultimate way to eat.
+        Produce is often only lightly cooked and what and how people cook is highly influenced by the season
+        </p>
+      </div>
+    <div id="foodMenu" class="menu-container mb-5"></div>`;
+
+  } else if(type === "drinks"){
+    section.innerHTML = `
+    <div class="container w-75">
+      <div class="title_header pt-5 pb-4">
+        <h3 class="catagory text-uppercase">${type} Menu</h3>
+        <p class="desc">Our drinks selection features barrel-aged Japanese whiskey as well as premium Sake from the regions of Nada & Fushimi. You’ll also find a diverse selection of beers, wines and spirits, so you can order an old favourite or ask our bartenders for a recommendation to suit your meal. 
+        </p>
+      </div>
+    <div id="foodMenu" class="menu-container mb-5"></div>`;
+    
+  }
 
   axios.get(`/api/menu/type/${type}`).then((response) => {
     const menuData = response.data;
