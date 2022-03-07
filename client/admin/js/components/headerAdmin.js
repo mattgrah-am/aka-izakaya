@@ -33,7 +33,7 @@ function renderAdminHeader() {
             <li onClick="renderCategory('drinks', 'whiskey')" class="dropdown-item pointer">Whiskey</li>
           </ul>
         </div>
-        <li class="nav-item nav-link link-light pointer">Messages</li>
+        <li class="nav-item nav-link link-light pointer" onClick = "renderContactMessages()">Messages</li>
       </ul>
       <hr>
       <!-- Bottom Profile -->
