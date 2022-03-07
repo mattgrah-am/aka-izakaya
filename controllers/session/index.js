@@ -42,6 +42,7 @@ router.get('/', (req, res) => {
 // 3. Delete Sessions (logout)
 router.delete('/', (req, res) => {
     req.session.destroy();
+    console.log('Signed out');
     res.json({
         message: 'Logged out.',
     });
