@@ -29,15 +29,14 @@ function renderMenu(type) {
 
       const filterMenu = menuData.filter((elem) => elem.category === category);
       filterMenu.forEach((item) => {
-        console.log(item);
         const div = document.createElement("div");
         foodMenu.appendChild(div).innerHTML = `
         <div class="d-flex justify-content-between border-bottom">
               <div>
-                <h5>${item.name}</h4>
+                <h5>${item.name}</h5>
                 <p>${item.description}</p>
               </div>
-              <h5 class="align-self-center">${item.price}</h4>
+              <h5 class="align-self-center">${item.price}</h5>
             </div>
           </div>
           `;

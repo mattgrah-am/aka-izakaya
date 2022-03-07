@@ -6,6 +6,13 @@ sei-anz-seifxr06 - Project 3 - [Live Version](https://aka-izakaya.herokuapp.com/
 
 - Japanese Resturant that has the ability to show customers the food and drinks menu. This website also has a Admin portal that gives the client the ability to "CRUD" the menu items.
 
+## Technologies Used
+
+- Node JS
+- Express JS
+- Postgres
+- Bootstrap
+
 ## User Stories
 
 - A Customer wants to read a drinks list to decide what drinks to order prior to coming to our resturant
@@ -19,21 +26,22 @@ sei-anz-seifxr06 - Project 3 - [Live Version](https://aka-izakaya.herokuapp.com/
 
 ## Wireframe Design
 
-[Main Page](./client/assets/readme/main-page.webp)
-[Drinks Menu](./client/assets/readme/drinks-menu.webp)
-[Food Menu](./client/assets/readme/food-menu.webp)
-[Contact Page](./client/assets/readme/contact.webp)
-[Admin Page](./client/assets/readme/admin.webp)
+- [Main Page](./client/assets/readme/main-page.webp)
+- [Drinks Menu](./client/assets/readme/drinks-menu.webp)
+- [Food Menu](./client/assets/readme/food-menu.webp)
+- [Contact Page](./client/assets/readme/contact.webp)
+- [Admin Page](./client/assets/readme/admin.webp)
 
 ## Stle Guide
 
 ### Font
 
-TBA
+- Primary logo font - [Long Cang](https://fonts.google.com/specimen/Long+Cang)
+- All other fonts are using Bootstrap's default fonts.
 
 ### Colours
 
-TBA
+- Bootstrap default colours classes (.text-light, .text-white, .navbar-dark)
 
 ### CSS Framework
 

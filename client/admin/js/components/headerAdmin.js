@@ -1,6 +1,6 @@
 function renderAdminHeader() {
-    const header = document.querySelector('#header-nav');
-    header.innerHTML = `
+  const header = document.querySelector("#header-nav");
+  header.innerHTML = `
   <nav class="vh-100 d-flex flex-column p-4 text-white bg-dark" style="width: 18rem;">
       <div class="d-flex align-items-center text-decoration-none text-white bg-dark fs-4 ps-2">Admin
         Portal
@@ -26,10 +26,10 @@ function renderAdminHeader() {
             Drinks Menu
           </button>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownMenuButton2">
-            <li onClick="renderCategory('drink', 'wine')" class="dropdown-item pointer">Wine</li>
-            <li onClick="renderCategory('drink', 'beer')" class="dropdown-item pointer">Beer</li>
-            <li onClick="renderCategory('drink', 'sake')" class="dropdown-item pointer">Sake</li>
-            <li onClick="renderCategory('drink', 'whiskey')" class="dropdown-item pointer">Whiskey</li>
+            <li onClick="renderCategory('drinks', 'wine')" class="dropdown-item pointer">Wine</li>
+            <li onClick="renderCategory('drinks', 'beer')" class="dropdown-item pointer">Beer</li>
+            <li onClick="renderCategory('drinks', 'sake')" class="dropdown-item pointer">Sake</li>
+            <li onClick="renderCategory('drinks', 'whiskey')" class="dropdown-item pointer">Whiskey</li>
           </ul>
         </div>
         <li class="nav-item nav-link link-light pointer">Messages</li>
