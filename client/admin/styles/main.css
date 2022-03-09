@@ -6,14 +6,19 @@ body {
 }
 
 header {
-    display: flex;
-    flex-wrap: nowrap;
-    height: 100vh;
-    max-height: 100vh;
-    overflow-x: auto;
-    overflow-y: hidden;
-}
 
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: fixed;
+}
+main { 
+  margin-left: 30vh;
+
+}
 .logo-font {
     font-family: 'Long Cang', cursive;
     font-size: 3rem;

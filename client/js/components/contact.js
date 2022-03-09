@@ -1,10 +1,10 @@
 function renderContact() {
-    document.body.style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/img/contact-bg.webp")`;
-    const page = document.querySelector('#page');
-    const section = document.createElement('section');
-    section.classList.add('container');
-    page.replaceChildren(section);
-    section.innerHTML = `
+  document.body.style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/img/contact-bg.webp")`;
+  const page = document.querySelector("#page");
+  const section = document.createElement("section");
+  section.classList.add("container", "fade-transition");
+  page.replaceChildren(section);
+  section.innerHTML = `
   <div class="container w-75 bg-black p-4" style="--bs-bg-opacity: .75;">
   <h2>Contact Us</h2>
   <p class="mb-0">You can find us at 123 Tokyo Street Japan 3000, or call us on <a class="link-secondary text-decoration-none" href="tel:+61 444 555 666">+61 444 555 666</a></p>
@@ -39,6 +39,7 @@ function renderContact() {
     </div>
   </div>
   `;
+
 
     const contactForm = document.getElementById('contact-submit');
     contactForm.addEventListener('submit', (event) => {
@@ -79,4 +80,3 @@ function renderContact() {
             displayError(error);
         }
     });
-}

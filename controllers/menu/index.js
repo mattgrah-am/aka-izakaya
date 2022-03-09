@@ -41,7 +41,7 @@ router.put("/", isLoggedIn, (req, res) => {
   });
 });
 
-router.delete("/:id", isLoggedIn, (req, res) => {
+router.delete("/:id([0-9]+)", isLoggedIn, (req, res) => {
   Menu.delete(req.params.id).then((response) => {
     if (response) {
       res.json({ status: true, message: "Item deleted" });
