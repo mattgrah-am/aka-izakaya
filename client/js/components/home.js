@@ -1,7 +1,7 @@
 function renderHome() {
-  const header = document.querySelector("#header-nav");
-  header.innerHTML = `
-      <div class="vh-100 d-flex flex-column justify-content-center align-items-center">
+  const page = document.querySelector("#page");
+  page.innerHTML = `
+      <div class="d-flex flex-column justify-content-center align-items-center align-self-center">
         <div class="bg-black bg-opacity-75 p-5">
           <h1 class="logo-font-lg">Aka</h1>
           <h1 class="logo-font-lg mb-5">Izakaya</h1>
