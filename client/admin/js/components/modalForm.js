@@ -24,9 +24,10 @@ function renderModItem(
         <label for="description" class="form-label">Description</label>
         <input type="text" name="description" id="description" class="form-control" value="${description}">
       </div>
+      <div class="errorMessage"></div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
     </form>
     `;
@@ -34,10 +35,12 @@ function renderModItem(
     const form = document.getElementById('createItem');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-
+        clearErrors();
         const nameField = document.querySelector('input[name=name]');
         const priceField = document.querySelector('input[name=price]');
         const descField = document.querySelector('input[name=description]');
+        const formModal = document.querySelector('#create');
+        const modal = bootstrap.Modal.getInstance(formModal);
 
         if (isCreate === true) {
             let body = {
@@ -47,15 +50,26 @@ function renderModItem(
                 description: descField.value,
                 category,
             };
-            axios
-                .post('/api/menu/', body)
-                .then((response) => {
-                    renderCategory(type, category);
-                    console.log(response);
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
+            let error = null;
+            if (body.name === '') {
+                error = 'Name is required';
+            } else if (body.price === '') {
+                error = 'Price is required';
+            } else if (body.description === '') {
+                error = 'Description is required';
+            }
+            if (!error) {
+                axios
+                    .post('/api/menu/', body)
+                    .then((response) => {
+                        modal.hide();
+
+                        renderCategory(type, category);
+                    })
+                    .catch((error) => {});
+            } else {
+                displayError(error);
+            }
         } else {
             let body = {
                 id,
@@ -65,15 +79,25 @@ function renderModItem(
                 description: descField.value,
                 category,
             };
-            axios
-                .put(`/api/menu/`, body)
-                .then((response) => {
-                    renderCategory(type, category);
-                    console.log(response);
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
+            let error = null;
+            if (body.name === '') {
+                error = 'Name is required';
+            } else if (body.price === '') {
+                error = 'Price is required';
+            } else if (body.description === '') {
+                error = 'Description is required';
+            }
+            if (!error) {
+                axios
+                    .put(`/api/menu/`, body)
+                    .then((response) => {
+                        modal.hide();
+                        renderCategory(type, category);
+                    })
+                    .catch((error) => {});
+            } else {
+                displayError(error);
+            }
         }
     });
 }

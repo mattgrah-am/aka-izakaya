@@ -19,6 +19,7 @@ function renderLogin() {
         <p class="logo-font mb-0">Aka Izakaya</p>
         <div class="border border-dark p-4 rounded bg-light shadow">
             <form id="login-form" action="/api/session" method="POST">
+            
                 <h3 class="border-bottom border-dark mb-3 pb-2">Login</h3>
                 <div class="mb-3">
                     <label for="email" class="form-label" style="color: black">Email address</label>
@@ -28,6 +29,7 @@ function renderLogin() {
                     <label for="password" class="form-label" style="color: black">Password</label>
                     <input type="password" class="form-control" name="password" id="password">
                 </div>
+                <div class="errorMessage"></div>
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>
         </div>
@@ -64,6 +66,7 @@ function renderLogin() {
                     displayError(error.response.data.message);
                 });
         } else {
+            console.log(error);
             displayError(error);
         }
     });

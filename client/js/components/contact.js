@@ -14,29 +14,20 @@ function renderContact() {
       <img class="img-fluid" src="./assets/img/map.webp" alt="Map of Tokyo">
     </div>
     <div class="col">
-      <form id="contact-submit"class="needs-validation" novalidate>
+      <form id="contact-submit">
         <div class="mb-3">
           <label for="name" class="form-label">Full Name</label>
-          <input type="text" class="form-control" id="name" required>
-          <div class="invalid-feedback">
-            Please provide name.
-          </div>
+          <input type="text" class="form-control" id="name">
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="email" required>
-          <div class="invalid-feedback">
-            Please provide email.
-          </div>
-        
-          </div>
+          <input type="email" class="form-control" id="email">
+        </div>
         <div class="mb-3">
           <label for="enquiry" class="form-label">Enquiry</label>
-          <textarea class="form-control" id="enquiry" rows="3" required></textarea>
-          <div class="invalid-feedback">
-            Please type enquiry here.
-          </div>
-          </div>
+          <textarea class="form-control" id="enquiry" rows="3"></textarea>
+        </div>
+        <div class="errorMessage"></div>
         <button type="submit" class="btn btn-light">Submit</button>
       </form>
       <div class="mt-4">
@@ -50,7 +41,7 @@ function renderContact() {
   `;
 
     const contactForm = document.getElementById('contact-submit');
-    contactForm.addEventListener('submit', errorBootstrapCheck(), (event) => {
+    contactForm.addEventListener('submit', (event) => {
         event.preventDefault();
         clearErrors();
         const nameField = document.querySelector('#name');
@@ -61,7 +52,6 @@ function renderContact() {
             email: emailField.value,
             enquiry: enquiryField.value,
         };
-
         let error = null;
         if (body.name === '') {
             error = 'Name is required';
@@ -70,19 +60,22 @@ function renderContact() {
         } else if (body.enquiry === '') {
             error = 'Enquiry is required';
         }
-
         if (!error) {
             axios
                 .post('/api/contact/', body)
                 .then((response) => {
-                    renderContact();
+                    nameField.value = '';
+                    emailField.value = '';
+                    enquiryField.value = '';
+                    // renderContact();
+                    displaySuccess();
                     console.log(response);
                 })
                 .catch((error) => {
                     console.log(error.data);
-                    displayError(error.response.data.message);
                 });
         } else {
+            console.log(error);
             displayError(error);
         }
     });

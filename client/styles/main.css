@@ -1,39 +1,39 @@
-@import url("https://fonts.googleapis.com/css2?family=Long+Cang&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&display=swap');
 
 .logo-font {
-  font-family: "Long Cang", cursive;
-  font-size: 4rem;
+    font-family: 'Long Cang', cursive;
+    font-size: 4rem;
 }
 
 .logo-font-lg {
-  font-family: "Long Cang", cursive;
-  font-size: 8rem;
-  line-height: 0.6;
-  text-align: right;
+    font-family: 'Long Cang', cursive;
+    font-size: 8rem;
+    line-height: 0.6;
+    text-align: right;
 }
 
 .bg-img {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../assets/img/main-bg.webp);
-  background-size: auto;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../assets/img/main-bg.webp);
+    background-size: auto;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .pointer {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .menu-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
 .grid-span-2 {
-  grid-column: 1 / span 2;
-  margin-top: 2rem;
+    grid-column: 1 / span 2;
+    margin-top: 2rem;
 }
 
 .about-img {
