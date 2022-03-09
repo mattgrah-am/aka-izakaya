@@ -27,6 +27,7 @@ function renderContact() {
           <label for="enquiry" class="form-label">Enquiry</label>
           <textarea class="form-control" id="enquiry" rows="3"></textarea>
         </div>
+        <div class="errorMessage"></div>
         <button type="submit" class="btn btn-light">Submit</button>
       </form>
       <div class="mt-4">
@@ -39,26 +40,43 @@ function renderContact() {
   </div>
   `;
 
-  const contactForm = document.getElementById("contact-submit");
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
 
-    const nameField = document.querySelector("#name");
-    const emailField = document.querySelector("#email");
-    const enquiryField = document.querySelector("#enquiry");
-    const body = {
-      name: nameField.value,
-      email: emailField.value,
-      enquiry: enquiryField.value,
-    };
-    axios
-      .post("/api/contact/", body)
-      .then((response) => {
-        renderContact();
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error.data);
-      });
-  });
-}
+    const contactForm = document.getElementById('contact-submit');
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        clearErrors();
+        const nameField = document.querySelector('#name');
+        const emailField = document.querySelector('#email');
+        const enquiryField = document.querySelector('#enquiry');
+        const body = {
+            name: nameField.value,
+            email: emailField.value,
+            enquiry: enquiryField.value,
+        };
+        let error = null;
+        if (body.name === '') {
+            error = 'Name is required';
+        } else if (body.email === '') {
+            error = 'Email is required';
+        } else if (body.enquiry === '') {
+            error = 'Enquiry is required';
+        }
+        if (!error) {
+            axios
+                .post('/api/contact/', body)
+                .then((response) => {
+                    nameField.value = '';
+                    emailField.value = '';
+                    enquiryField.value = '';
+                    // renderContact();
+                    displaySuccess();
+                    console.log(response);
+                })
+                .catch((error) => {
+                    console.log(error.data);
+                });
+        } else {
+            console.log(error);
+            displayError(error);
+        }
+    });
