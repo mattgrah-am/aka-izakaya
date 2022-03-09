@@ -12,11 +12,9 @@ header {
   max-height: 100vh;
   overflow-x: auto;
   overflow-y: hidden;
-  position: fixed;
+  position: sticky;
 }
-main {
-  margin-left: 30vh;
-}
+
 .logo-font {
   font-family: "Long Cang", cursive;
   font-size: 3rem;
@@ -37,10 +35,5 @@ h1 {
 }
 
 .about {
-  padding-left: 25px;
   padding-top: 20px;
-}
-
-.errorMessage {
-  color: red;
 }
