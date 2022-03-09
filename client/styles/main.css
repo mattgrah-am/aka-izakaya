@@ -41,3 +41,22 @@
   text-shadow: 2px 2px 2px #000;
   margin-top: 2rem;
 }
+
+.fade-transition {
+  opacity: 1;
+  animation: fade 1s linear;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* on click add class that starts fade animation - settimeout 1000ms */

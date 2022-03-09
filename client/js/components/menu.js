@@ -2,11 +2,11 @@ function renderMenu(type) {
   document.body.style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../assets/img/${type}-bg.webp") no-repeat fixed center`;
   const page = document.querySelector("#page");
   const section = document.createElement("section");
-  section.classList.add("container");
+  section.classList.add("container", "fade-transition");
   page.replaceChildren(section);
   console.log(type);
 
-  if (type === "food"){
+  if (type === "food") {
     section.innerHTML = `
     <div class="container w-75">
       <div class="title_header pt-5 pb-4">
@@ -16,8 +16,7 @@ function renderMenu(type) {
         </p>
       </div>
     <div id="foodMenu" class="menu-container mb-5"></div>`;
-
-  } else if(type === "drinks"){
+  } else if (type === "drinks") {
     section.innerHTML = `
     <div class="container w-75">
       <div class="title_header pt-5 pb-4">
@@ -26,7 +25,6 @@ function renderMenu(type) {
         </p>
       </div>
     <div id="foodMenu" class="menu-container mb-5"></div>`;
-    
   }
 
   axios.get(`/api/menu/type/${type}`).then((response) => {

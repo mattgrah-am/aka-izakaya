@@ -2,7 +2,7 @@ function renderAbout() {
   document.body.style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/img/about-bg.webp")`;
   const page = document.querySelector("#page");
   const section = document.createElement("section");
-  section.classList.add("container");
+  section.classList.add("container", "fade-transition");
   page.replaceChildren(section);
   section.innerHTML = `
       <div class="container bg-black p-5" style="--bs-bg-opacity: .75;">
@@ -27,7 +27,7 @@ function renderAbout() {
             <h2>Aka Izakaya draws on the purity and integrity of Japanese cuisine while infusing it with an Australian
               sensibility.</h2>
             <h5>Discover dishes both familiar and unknown, all designed to highlight the freshest local produce.</h5>
-            <button class="btn btn-secondary" onclick="renderMenu('food')">Discover</button>
+            <button class="btn btn-secondary mt-3" onclick="renderMenu('food')">Discover</button>
           </section>
         </div>
         <div class="row align-items-center">
@@ -37,7 +37,7 @@ function renderAbout() {
               purest
               expression of Wine, Beer, Sake, and Whiskey.</h5>
               <h5>Our wine, beer, sake and whiskey bar serves the city’s finest libations and is home to Australia’s largest selection of Whiskey. Unwind before dinner or retire here for a nightcap.</h5>
-              <button class="btn btn-secondary" onclick="renderMenu('drinks')">Find out more</button>
+              <button class="btn btn-secondary mt-3" onclick="renderMenu('drinks')">Find out more</button>
           </section>
           <figure class="col bg-white text-dark p-4">
             <img class="img-fluid" src="./assets/img/about/drinks.webp" alt="Aka Izakaya Bar">
