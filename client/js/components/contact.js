@@ -1,5 +1,6 @@
 function renderContact() {
   document.body.style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/img/contact-bg.webp")`;
+  document.body.style.background-size = `cover`;
   const page = document.querySelector("#page");
   const section = document.createElement("section");
   section.classList.add("container", "fade-transition");
