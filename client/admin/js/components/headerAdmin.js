@@ -1,8 +1,8 @@
 function renderAdminHeader() {
-  axios.get("/api/session/").then((response) => {
-    const user = response.data.email;
-    const header = document.querySelector("#header-nav");
-    header.innerHTML = `
+    axios.get('/api/session/').then((response) => {
+        const user = response.data.email;
+        const header = document.querySelector('#header-nav');
+        header.innerHTML = `
   <nav class="d-flex flex-column p-4 text-white bg-dark" style="width: 15rem;">
       <div class="d-flex align-items-center text-decoration-none text-white bg-dark fs-4 ps-2"> <a href="/admin" id="admin-link"> Admin
         Portal</a>
@@ -33,7 +33,7 @@ function renderAdminHeader() {
             <li onClick="renderCategory('drinks', 'whiskey')" class="dropdown-item pointer">Whiskey</li>
           </ul>
         </div>
-        <li class="nav-item nav-link link-light pointer" onClick = "renderContactMessages()">Messages</li>
+        <li class="nav-item nav-link link-light pointer" onClick="renderContactMessages()" id="message-button">Messages</li>
       </ul>
       <hr>
       <!-- Bottom Profile -->
@@ -48,5 +48,6 @@ function renderAdminHeader() {
       </div>
     </nav>
   `;
-  });
+    });
+    checkMessages();
 }

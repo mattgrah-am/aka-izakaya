@@ -24,16 +24,18 @@ CREATE TABLE contact (
     id SERIAL PRIMARY KEY NOT NULL,
     name VARCHAR (128),
     email VARCHAR (120),
-    enquiry TEXT
+    enquiry TEXT,
+    unread BOOLEAN
 );
 
 INSERT INTO
-    contact (name, email, enquiry)
+    contact (name, email, enquiry, unread)
 VALUES
     (
         'Stefan Fenech',
         'stefan@gmail.com',
-        'Hi, your food was sick. Love it.'
+        'Hi, your food was sick. Love it.',
+        true
     );
 
 CREATE TABLE menu(

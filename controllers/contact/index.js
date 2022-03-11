@@ -22,6 +22,12 @@ router.post('/', (req, res) => {
     });
 });
 
+router.patch('/', (req, res) => {
+    Contact.markAsRead().then((response) => {
+        res.json(response);
+    });
+});
+
 router.delete('/:id([0-9]+)', isLoggedIn, (req, res) => {
     Contact.delete(req.params.id).then((response) => {
         if (response) {
