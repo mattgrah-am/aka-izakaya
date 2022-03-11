@@ -6,22 +6,13 @@ body {
 }
 
 header {
-<<<<<<< HEAD
-  display: flex;
-  flex-wrap: nowrap;
-  height: 100vh;
-  max-height: 100vh;
-  overflow-x: auto;
-  overflow-y: hidden;
-  position: sticky;
-=======
     display: flex;
     flex-wrap: nowrap;
     height: 100vh;
     max-height: 100vh;
     overflow-x: auto;
     overflow-y: hidden;
->>>>>>> ec05fa9 (Added basic functionality for a unread messages system within the admin page)
+    position: sticky;
 }
 
 .logo-font {
