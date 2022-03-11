@@ -1,10 +1,10 @@
 function renderContactMessages() {
-  const page = document.querySelector("#page");
-  const section = document.createElement("section");
-  section.classList.add("container");
-  page.replaceChildren(section);
+    const page = document.querySelector('#page');
+    const section = document.createElement('section');
+    section.classList.add('container');
+    page.replaceChildren(section);
 
-  section.innerHTML = `      
+    section.innerHTML = `      
   <div class="container">
       <div class="title_header pt-5 pb-2">
         <h3 class="catagory text-uppercase">Messages</h3>
@@ -37,12 +37,17 @@ function renderContactMessages() {
     </div>
     `;
 
-  axios.get(`../api/contact`).then((response) => {
-    const messageData = response.data;
-    const messageTable = document.querySelector("#messageTable");
-    messageData.forEach((message) => {
-      const tr = document.createElement("tr");
-      messageTable.appendChild(tr).innerHTML = `
+    axios.patch('../api/contact').then((response) => {
+        const message = response.data;
+        checkMessages();
+    });
+
+    axios.get(`../api/contact`).then((response) => {
+        const messageData = response.data;
+        const messageTable = document.querySelector('#messageTable');
+        messageData.forEach((message) => {
+            const tr = document.createElement('tr');
+            messageTable.appendChild(tr).innerHTML = `
             <th scope="row">${message.name}</th>
             <td>${message.email}</td>
             <td>${message.enquiry}</td>
@@ -52,6 +57,20 @@ function renderContactMessages() {
             )" data-bs-toggle="modal" data-bs-target="#create">Delete</button>
             </td>
           `;
+        });
     });
-  });
+}
+
+function checkMessages() {
+    axios.get('/api/contact/').then((response) => {
+        message = response.data;
+        let messageButton = document.querySelector('#message-button');
+        message.forEach((message) => {
+            if (message.unread === true) {
+                messageButton.classList.add('unread-message');
+            } else {
+                messageButton.classList.remove('unread-message');
+            }
+        });
+    });
 }

@@ -14,9 +14,15 @@ const Contact = {
         });
     },
     create: ({ name, email, enquiry }) => {
-        const query = `INSERT INTO contact (name, email, enquiry) VALUES ($1, $2, $3) RETURNING *`;
+        const query = `INSERT INTO contact (name, email, enquiry, unread) VALUES ($1, $2, $3, true) RETURNING *`;
         return db.query(query, [name, email, enquiry]).then((response) => {
             return response.rows ? response.rows[0] : {};
+        });
+    },
+    markAsRead: () => {
+        const query = 'update contact set unread = false where unread = true';
+        return db.query(query).then((response) => {
+            return response.rows;
         });
     },
     delete: (id) => {

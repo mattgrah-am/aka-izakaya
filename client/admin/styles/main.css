@@ -1,11 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Long+Cang&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&display=swap');
 
 body {
-  min-height: 100vh;
-  background-color: #e3e3e3;
+    min-height: 100vh;
+    background-color: #e3e3e3;
 }
 
 header {
+<<<<<<< HEAD
   display: flex;
   flex-wrap: nowrap;
   height: 100vh;
@@ -13,27 +14,39 @@ header {
   overflow-x: auto;
   overflow-y: hidden;
   position: sticky;
+=======
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+>>>>>>> ec05fa9 (Added basic functionality for a unread messages system within the admin page)
 }
 
 .logo-font {
-  font-family: "Long Cang", cursive;
-  font-size: 3rem;
+    font-family: 'Long Cang', cursive;
+    font-size: 3rem;
 }
 
 .pointer {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 h1 {
-  color: black;
-  margin: 3rem 0 0 4rem;
+    color: black;
+    margin: 3rem 0 0 4rem;
 }
 
 #admin-link {
-  text-decoration: none;
-  color: white;
+    text-decoration: none;
+    color: white;
 }
 
 .about {
-  padding-top: 20px;
+    padding-top: 20px;
+}
+
+.unread-message {
+    color: red;
 }
