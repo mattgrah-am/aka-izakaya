@@ -6,6 +6,13 @@ sei-anz-seifxr06 - Project 3 - [Live Version](https://aka-izakaya.herokuapp.com/
 
 - Japanese Resturant that has the ability to show customers the food and drinks menu. This website also has a Admin portal that gives the client the ability to "CRUD" the menu items.
 
+### Challenges
+Even though Bootstrap is a feature rich CSS framework, the team found it difficult to easily insert in to the site code in some scenarios. The general concensious was that it was "Bootstraps way or the highway". 
+
+There were some instances of Merge conflicts, however this project gave the team to time to practice resolving these issues as a group. 
+
+Over the development of the website there were instances of silly mistakes / codes not complete that left the team mind boggled until someone had a lightbulb moment. 
+
 ## How to use
 
 - To access admin portal go to the [admin site](https://aka-izakaya.herokuapp.com/admin)
@@ -51,7 +58,7 @@ sei-anz-seifxr06 - Project 3 - [Live Version](https://aka-izakaya.herokuapp.com/
 - Ability to add other users to the admin page.
 - Ability to edit the 'About' from the admin page.
 
-## Stle Guide
+## Style Guide
 
 ### Font
 
@@ -65,3 +72,4 @@ sei-anz-seifxr06 - Project 3 - [Live Version](https://aka-izakaya.herokuapp.com/
 ### CSS Framework
 
 [Bootstrap](https://getbootstrap.com/)
+
