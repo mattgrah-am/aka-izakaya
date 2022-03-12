@@ -6,6 +6,14 @@ sei-anz-seifxr06 - Project 3 - [Live Version](https://aka-izakaya.herokuapp.com/
 
 - Japanese Resturant that has the ability to show customers the food and drinks menu. This website also has a Admin portal that gives the client the ability to "CRUD" the menu items.
 
+## How to use
+
+- To access admin portal go to the [admin site](https://aka-izakaya.herokuapp.com/admin)
+- To edit the menu, go to the item category
+- To add a new item, click on 'Create new'
+- To edit items, click on 'Update'
+- To delete items, click on 'Delete'
+
 ## Technologies Used
 
 - Node JS
@@ -31,6 +39,17 @@ sei-anz-seifxr06 - Project 3 - [Live Version](https://aka-izakaya.herokuapp.com/
 - [Food Menu](./client/assets/readme/food-menu.webp)
 - [Contact Page](./client/assets/readme/contact.webp)
 - [Admin Page](./client/assets/readme/admin.webp)
+
+## Bugs
+
+- N/A
+
+## Future Updates
+
+- Ability to expand messages in admin page.
+- Ability to reply a message, from the admin portal.
+- Ability to add other users to the admin page.
+- Ability to edit the 'About' from the admin page.
 
 ## Stle Guide
 
