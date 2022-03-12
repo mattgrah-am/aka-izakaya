@@ -4,7 +4,7 @@ sei-anz-seifxr06 - Project 3 - [Live Version](https://aka-izakaya.herokuapp.com/
 
 ## Design Brief
 
-- Japanese Resturant that has the ability to show customers the food and drinks menu. This website also has a Admin portal that gives the client the ability to "CRUD" the menu items.
+Japanese Resturant that has the ability to show customers the food and drinks menu. This website also has a Admin portal that gives the client the ability to "CRUD" the menu items.
 
 ### Challenges
 Even though Bootstrap is a feature rich CSS framework, the team found it difficult to easily insert in to the site code in some scenarios. The general concensious was that it was "Bootstraps way or the highway". 
