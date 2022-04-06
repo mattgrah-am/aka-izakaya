@@ -1,0 +1,10 @@
+setup:
+  addons:
+    - plan: heroku-postgres
+build:
+  docker:
+    web: Dockerfile
+  config:
+    NODE_ENV: production
+run:
+  web: yarn start
